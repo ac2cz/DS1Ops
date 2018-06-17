@@ -29,6 +29,7 @@ module Cosmos
       read_port,
       username,
       password,
+      foxid,
       write_timeout,
       read_timeout,
       protocol_type = nil,
@@ -42,6 +43,7 @@ module Cosmos
       @write_timeout = write_timeout
       @username = username
       @password = password
+      @foxid = foxid
       @read_timeout = read_timeout
       @read_allowed = false unless @read_port
       @write_allowed = false unless @write_port
@@ -61,6 +63,7 @@ module Cosmos
       super()
 	  write_interface @username + "\n"
 	  write_interface @password + "\n"
+            write_interface @foxid + "\n"
     end
   end
 end
